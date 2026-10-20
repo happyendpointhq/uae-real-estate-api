@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "platform": "bayut",
+  "data": {
+    "properties": [
+      {
+        "id": "10935141",
+        "externalID": "14354275",
+        "title": {
+          "en": "Stunning Marina View | 1 Bedroom Unfurnished"
+        },
+        "purpose": "for-rent",
+        "price": 85000,
+        "rentFrequency": "yearly",
+        "rooms": 1,
+        "baths": 2,
+        "area": 64.27,
+        "isVerified": true,
+        "completionStatus": "completed",
+        "amenities": [
+          "Parking",
+          "Swimming Pool",
+          "Gym",
+          "Security"
+        ]
+      }
+    ],
+    "total": 1432,
+    "page": 1,
+    "totalPages": 58,
+    "hitsPerPage": 25
+  }
+}

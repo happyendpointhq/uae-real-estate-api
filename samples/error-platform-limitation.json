@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "message": "Agent details is not available for PropertyFinder. Use /search-agents to find agents or /agent-properties to view their listings.",
+  "error": "PLATFORM_LIMITATION"
+}

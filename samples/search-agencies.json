@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "platform": "bayut",
+  "data": {
+    "agencies": [
+      {
+        "externalID": "10212",
+        "name": "DAMAC Properties",
+        "stats": {
+          "adsCount": 5210
+        },
+        "agentsCount": 45
+      }
+    ],
+    "total": 7,
+    "page": 1
+  }
+}

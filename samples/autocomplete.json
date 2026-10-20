@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "platform": "bayut",
+  "data": [
+    {
+      "location_id": "5003",
+      "name": "Dubai Marina",
+      "type": "neighbourhood",
+      "path": "UAE > Dubai > Dubai Marina",
+      "coordinates": {
+        "lat": 25.0831,
+        "lon": 55.1443
+      }
+    }
+  ]
+}
