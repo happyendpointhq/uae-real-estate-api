@@ -292,7 +292,7 @@ an [API gateway](https://dubailand.gov.ae/en/eservices/api-gateway/).
 
 ### Is there a free UAE real estate API?
 
-Plans, including any free tier, are on the [RapidAPI listing](https://rapidapi.com/happyendpoint/api/uae-real-estate-api), where you can test every endpoint once subscribed.
+Yes. The [RapidAPI listing](https://rapidapi.com/happyendpoint/api/uae-real-estate-api) has a free plan, and every endpoint can be tried on it.
 
 ### Can I get Bayut and PropertyFinder data with one API key?
 
