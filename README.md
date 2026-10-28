@@ -331,6 +331,7 @@ single-portal APIs, which go deeper into each site.
 - [propertyfinder-api](https://github.com/happyendpointhq/propertyfinder-api) - the PropertyFinder-only API
 - [uae-real-estate-data-guide](https://github.com/happyendpointhq/uae-real-estate-data-guide) - every way to get UAE property data: APIs, datasets and official sources
 - [dubai-rental-yield-calculator](https://github.com/happyendpointhq/dubai-rental-yield-calculator) - gross and net yields by Dubai area
+- [yad2-api](https://github.com/happyendpointhq/yad2-api) - Israel listings with government-registered sale prices, the same asking versus paid idea for Israel
 - [awesome-real-estate-apis](https://github.com/happyendpointhq/awesome-real-estate-apis) - real estate APIs and data sources by country
 
 ---
