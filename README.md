@@ -12,6 +12,9 @@ Built and maintained by [Happy Endpoint](https://happyendpoint.com/library/uae-r
 - Subscribe and test every endpoint on RapidAPI: https://rapidapi.com/happyendpoint/api/uae-real-estate-api
 - Product page: https://happyendpoint.com/library/uae-realestate-api?utm_source=github&utm_medium=readme&utm_campaign=uae-real-estate-api
 - Hosted docs: https://docs.happyendpoint.com/uae-realestate/
+- Postman documentation: https://documenter.getpostman.com/view/56555678/2sBYHXRJR2
+- Postman collection (fork and run): https://www.postman.com/happyendpoints-team/uae-real-estate-api
+- Single-portal APIs with more endpoints: [bayutapi.dev](https://bayutapi.dev/?utm_source=github&utm_medium=readme&utm_campaign=uae-real-estate-api) (Bayut) and [uaepropertyapi.com](https://uaepropertyapi.com/?utm_source=github&utm_medium=readme&utm_campaign=uae-real-estate-api) (Property Finder)
 
 ---
 
