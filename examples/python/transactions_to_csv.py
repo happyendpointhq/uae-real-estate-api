@@ -35,7 +35,8 @@ def flatten(row, prefix=""):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("area")
-    parser.add_argument("--platform", default="bayut", choices=["bayut", "propertyfinder"])
+    parser.add_argument("--platform", default="other", choices=["other", "bayut", "propertyfinder"],
+                        help="other = Bayut (its name on RapidAPI), propertyfinder = Property Finder")
     parser.add_argument("--type", default="sale", choices=["sale", "rental"])
     parser.add_argument("--period", default="1y", choices=["3m", "6m", "1y", "2y"])
     parser.add_argument("--property-type", help="apartment, villa, townhouse, penthouse, ...")

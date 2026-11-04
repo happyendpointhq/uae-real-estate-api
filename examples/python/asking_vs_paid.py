@@ -12,7 +12,8 @@ from statistics import median
 
 from client import get, resolve_location
 
-PLATFORM = "bayut"
+# Bayut is platform="other" on RapidAPI ("bayut" is accepted too); Bayut responses say "platform": "other".
+PLATFORM = "other"
 
 
 def listing_prices(location_id, purpose, bedrooms, pages, **extra):

@@ -20,13 +20,14 @@ async function get(path, platform, params = {}) {
 const area = process.argv[2] ?? 'Dubai Marina';
 
 // Location IDs differ between platforms, so resolve the name on each one.
-for (const platform of ['bayut', 'propertyfinder']) {
+// Bayut is platform=other on RapidAPI ('bayut' is accepted too); Bayut responses say "platform": "other".
+for (const platform of ['other', 'propertyfinder']) {
   const [place] = await get('/autocomplete', platform, { query: area });
-  console.log(`${platform}: ${place?.name} id=${place?.location_id}${place?.path ? ` (${place.path})` : ''}`);
+  console.log(`${platform === 'other' ? 'bayut (other)' : platform}: ${place?.name} id=${place?.location_id}${place?.path ? ` (${place.path})` : ''}`);
 }
 
-const [bayutPlace] = await get('/autocomplete', 'bayut', { query: area });
-const results = await get('/search-properties', 'bayut', {
+const [bayutPlace] = await get('/autocomplete', 'other', { query: area });
+const results = await get('/search-properties', 'other', {
   purpose: 'rent',
   location_id: bayutPlace.location_id,
   bedrooms: '1,2',

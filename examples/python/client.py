@@ -34,7 +34,11 @@ class ApiError(RuntimeError):
 
 
 def get(path, platform, **params):
-    """GET an endpoint for one platform ("bayut" or "propertyfinder") and return `data`."""
+    """GET an endpoint for one platform and return `data`.
+
+    platform: "other" for Bayut (its name on RapidAPI; "bayut" is accepted too) or
+    "propertyfinder". Bayut responses say "platform": "other".
+    """
     key = os.environ.get("RAPIDAPI_KEY")
     if not key:
         raise SystemExit("Set RAPIDAPI_KEY first (see .env.example).")

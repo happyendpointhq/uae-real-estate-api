@@ -8,7 +8,8 @@ import sys
 from client import get, resolve_location, title
 
 area = sys.argv[1] if len(sys.argv) > 1 else "Dubai Marina"
-PLATFORM = "bayut"
+# Bayut is platform="other" on RapidAPI ("bayut" is accepted too); Bayut responses say "platform": "other".
+PLATFORM = "other"
 
 # 1. Resolve the name to a platform-specific location_id (faster and unambiguous).
 place = resolve_location(PLATFORM, area)

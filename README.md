@@ -59,15 +59,22 @@ Subscribe on [RapidAPI](https://rapidapi.com/happyendpoint/api/uae-real-estate-a
 
 ### 2. Make a request
 
-Every request names its portal with `platform=bayut` or `platform=propertyfinder`. Resolve
-the area first, then search with its ID:
+Every request names its portal with `platform=bayut` or `platform=propertyfinder`.
+
+> **Using Bayut data:** on RapidAPI the Bayut source is listed as `platform=other`. To get
+> Bayut data, send `platform=other` (`platform=bayut` is accepted too). Every Bayut response
+> comes back with `"platform": "other"`: that is the Bayut data, so treat `other` as Bayut in
+> your code. Property Finder is `platform=propertyfinder`; on Property Finder,
+> `/search-properties` needs `location` (the area name) rather than `location_id`.
+
+On Bayut, resolve the area first, then search with its ID:
 
 ```bash
-curl "https://uae-real-estate-api.p.rapidapi.com/autocomplete?platform=bayut&query=Dubai%20Marina" \
+curl "https://uae-real-estate-api.p.rapidapi.com/autocomplete?platform=other&query=Dubai%20Marina" \
   -H "x-rapidapi-host: uae-real-estate-api.p.rapidapi.com" \
   -H "x-rapidapi-key: YOUR_RAPIDAPI_KEY"
 
-curl "https://uae-real-estate-api.p.rapidapi.com/search-properties?platform=bayut&purpose=rent&location_id=5003&bedrooms=1,2" \
+curl "https://uae-real-estate-api.p.rapidapi.com/search-properties?platform=other&purpose=rent&location_id=5003&bedrooms=1,2" \
   -H "x-rapidapi-host: uae-real-estate-api.p.rapidapi.com" \
   -H "x-rapidapi-key: YOUR_RAPIDAPI_KEY"
 ```
@@ -86,8 +93,8 @@ python quickstart.py "Dubai Marina"
 ```python
 from client import get, resolve_location
 
-place = resolve_location("bayut", "Dubai Marina")
-results = get("/search-properties", "bayut", purpose="rent", location_id=place["location_id"])
+place = resolve_location("other", "Dubai Marina")  # "other" is Bayut
+results = get("/search-properties", "other", purpose="rent", location_id=place["location_id"])
 for row in results["properties"]:
     print(row["price"], row["rentFrequency"], row["title"]["en"])
 ```
@@ -102,14 +109,14 @@ RAPIDAPI_KEY=your_key node examples/javascript/quickstart.mjs "Dubai Marina"
 
 ## Example response
 
-`GET /search-properties?platform=bayut&purpose=rent&location=Dubai Marina&bedrooms=1,2&price_max=100000`,
+`GET /search-properties?platform=other&purpose=rent&location=Dubai Marina&bedrooms=1,2&price_max=100000`,
 from the example in the API's public documentation. The other documented examples are in
 [`samples/`](samples/).
 
 ```json
 {
   "success": true,
-  "platform": "bayut",
+  "platform": "other",
   "data": {
     "properties": [
       {
@@ -140,7 +147,7 @@ from the example in the API's public documentation. The other documented example
 ## Endpoints
 
 Base URL: `https://uae-real-estate-api.p.rapidapi.com`. Every endpoint takes `platform`
-(`bayut` or `propertyfinder`).
+(`other` for Bayut, also accepted as `bayut`; or `propertyfinder`). Bayut responses say `"platform": "other"`.
 
 ### Properties
 
@@ -299,7 +306,8 @@ Yes. The [RapidAPI listing](https://rapidapi.com/happyendpoint/api/uae-real-esta
 
 ### Can I get Bayut and PropertyFinder data with one API key?
 
-Yes. Every endpoint takes `platform=bayut` or `platform=propertyfinder`; the key and the
+Yes. Every endpoint takes `platform=bayut` or `platform=propertyfinder` (on RapidAPI, Bayut is
+listed as `platform=other`, and Bayut responses say `"platform": "other"`); the key and the
 endpoint structure are the same. IDs and some response shapes differ per portal (see
 "Things to know about the data").
 
