@@ -212,9 +212,9 @@ The mistakes that give wrong numbers rather than errors:
 - **Some calls exist on Bayut only.** Agent and agency profiles, and searching agents or
   agencies by name, are Bayut-only. On PropertyFinder they return `success: false` with
   `"error": "PLATFORM_LIMITATION"`, and agent or broker search needs a location.
-- **Agent listings use a different ID on Bayut.** `/agent-properties` on Bayut takes the
-  `ownerID` from `/agent-details`, not the ID from `/search-agents`. Its `sort` and
-  `transaction_type` apply to PropertyFinder only.
+- **Agent listings on Bayut take the agent's `externalID`.** `/agent-properties` on Bayut takes the
+  `agent_external_id` from `/search-agents`. Any other ID returns an empty list, not an error, so
+  check `total`. Its `sort` and `transaction_type` apply to PropertyFinder only.
 - **PropertyFinder transactions take one filter value.** For `property_type` and `bedrooms`,
   PropertyFinder uses only the first of several comma-separated values.
 - **Bayut transactions are Algolia-shaped strings.** Rows come under `hits`, with `nbHits` and
